@@ -21,7 +21,7 @@ const DatumComp = () => {
 
   return (
     <div className="grid grid-cols-[auto,1fr,auto]">
-      <button className='float-left w-auto px-2 border-r' onClick={handlePreviousDate}>Previous</button>
+      <button className='float-left w-auto px-2 border-r' onClick={handlePreviousDate}>Zurück</button>
       <div className="grid grid-cols-5 justify-items-center">
         {[...Array(5)].map((_, index) => {
           const date = new Date(currentDate);
@@ -33,7 +33,7 @@ const DatumComp = () => {
           );
         })}
       </div>
-      <button className='float-right w-20 px-2 border-l' onClick={handleNextDate}>Next</button>
+      <button className='float-right w-20 px-2 border-l' onClick={handleNextDate}>Vor</button>
     </div>
   );
 }

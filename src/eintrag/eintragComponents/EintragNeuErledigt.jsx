@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
-const EintragNeuErledigt = () => {
+const EintragNeuErledigt = ({setErledigt}) => {
 
-
+  const erledigt = useRef()
 
   
   return (
@@ -10,7 +10,7 @@ const EintragNeuErledigt = () => {
       <span className='text-sm font-semibold font-serif mb-2'>bereits Erledigt</span>
       <div className='flex flex-col ml-[30%]'>
       <label>
-        <input type='checkbox' id='erledigtNeu' name='erledigtNeu'/>
+        <input ref={erledigt} type='checkbox' id='erledigtNeu' name='erledigtNeu' onChange={() => setErledigt(erledigt.current.value)}/>
       </label>
       </div>
     </div>

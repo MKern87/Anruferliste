@@ -12,7 +12,7 @@ const Rueckruf = () => {
   
          if (data && data.mitarbeiterData && data.mitarbeiterData.length > 0) {
            setMitarbeiterData(data.mitarbeiterData);
-           console.log(data)
+          //  console.log(data)
          }
 
 

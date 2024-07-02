@@ -29,26 +29,26 @@ const DatenAnrufe = () => {
               <div>Text: {item.text}</div>
               <div>Art: {item.art_id}</div>
               <div>Mitarbeiter: {item.mitarbeiter_id}</div>
-              <div>Kategorie:{item.kategorie}</div>
+              <div>Kategorie: {item.kategorie_id}</div>
               <div>Datum: {item.datum}</div>
               <div>Dauer: {item.dauer}</div>
-              <div>Rückruf: 
+              <div>Rückruf:
                 {
-                  item.rueckruf == 0 
-                  ? <input checked={false} type='checkbox' disabled/> 
-                  : <input checked type='checkbox' disabled/>
+                  item.rueckruf == 0
+                  ? <input disabled checked={false} type='checkbox'/> 
+                  : <input disabled checked type='checkbox' />
                 }
-              {/* {console.log(item.rueckruf)} */}
+              {console.log(item.rueckruf)}
               </div>
               <div>Rückrufer: {item.rueckrufWer}</div>
               <div>Datum Rückruf:{item.datumRueckruf}</div>
               <div>Erledigt: 
                 {
                 item.erledigt == 0 
-                ? <input checked={false}  type='checkbox' disabled/> 
-                : <input checked  type='checkbox' disabled/>
+                ? <input disabled checked={false}  type='checkbox' /> 
+                : <input disabled checked  type='checkbox' />
                 }
-                {/* {console.log(item.erledigt)} */}
+                {console.log(item.erledigt)}
               </div>
             </div>
           </div>

@@ -89,3 +89,24 @@ export async function DatenabrufAnrufe () {
     console.log('Error fetching data:', error)
   }
 }
+
+// Datenabruf Kategorien
+export async function DatenabrufKategorie () {
+
+  try {
+    const request = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+
+      })
+    }
+
+    const res = await fetch('http://localhost/anruferliste/backend/kategorie.php', request);
+    const kategorieData = await res.json();
+
+    return kategorieData;
+  } catch (error) {
+    console.log('Error fetching data:', error)
+  }
+}

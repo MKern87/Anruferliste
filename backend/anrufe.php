@@ -23,13 +23,15 @@ $query = 'SELECT anrufe.*,
                 handelspartner.suchbegriff as kunde,
                 mitarbeiter.mitarbeiter as mitarbeiter,
                 art.art as art,
+                kategorie.kategorie as kategorie,
                 (SELECT mitarbeiter.mitarbeiter 
                 FROM mitarbeiter 
                 WHERE mitarbeiter.id = anrufe.rueckrufWer) as mitarbeiterRR
                 FROM anrufe
                 JOIN handelspartner ON anrufe.handelspartner_id = handelspartner.id
                 JOIN mitarbeiter ON anrufe.mitarbeiter_id = mitarbeiter.id
-                JOIN art ON anrufe.art_id = art.id';
+                JOIN art ON anrufe.art_id = art.id
+                JOIN kategorie ON anrufe.kategorie_id = kategorie.id';
 
 $abruf = mysqli_query($db, $query);
 
@@ -47,19 +49,23 @@ if ($abruf) { // Prüfen, ob der Abruf erfolgreich war
             $categorie = $row['kategorie'];
             $dateRR = $row['datumRueckruf'];
             $rrWer = $row['mitarbeiterRR'];
+
+            // Datum konvertiert
+            $datumKonvertiert = (new DateTime($date))->format('d.m.Y');
+            $datumKonvertiertRR = (new DateTime($dateRR))->format('d.m.Y');
             
             array_push($arr, array(
                 'id' => $id,
                 'handelspartner_id' => $hpId,
                 'mitarbeiter_id' => $mId,
                 'art_id' => $aId,
-                'datum' => $date,
+                'datum' => $datumKonvertiert,
                 'dauer' => $dauer,
                 'rueckruf' => $rruf,
                 'text' => $text,
                 'erledigt' => $done,
-                'kategorie' => $categorie,
-                'datumRueckruf' => $dateRR,
+                'kategorie_id' => $categorie,
+                'datumRueckruf' => $datumKonvertiertRR,
                 'rueckrufWer' => $rrWer,
             ));
         }
