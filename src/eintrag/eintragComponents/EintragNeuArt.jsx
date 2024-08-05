@@ -22,9 +22,9 @@ const EintragNeuArt = ({setArt}) => {
 
 
   return (
-    <div className='grid grid-cols-1 mt-2 border border-white px-8 my-4 rounded-md py-2'>
+    <div className='h-full flex flex-col items-center justify-center py-2 mt-2 border border-white rounded-md'>
       <p className='text-sm font-semibold font-serif mb-2'>Art der Kommunikation</p>
-      <select ref={art} className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='artNeu' onChange={() => setArt(art.current.value)}>
+      <select ref={art} className='w-1/2 text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='artNeu' onChange={() => setArt(art.current.value)}>
       <option>Art auswählen...</option>
         {
           artData?.length > 0 && artData?.map((item, index) => (

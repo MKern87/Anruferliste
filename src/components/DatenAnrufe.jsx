@@ -38,7 +38,7 @@ const DatenAnrufe = () => {
                   ? <input disabled checked={false} type='checkbox'/> 
                   : <input disabled checked type='checkbox' />
                 }
-              {console.log(item.rueckruf)}
+              {/* {console.log(item.rueckruf)} */}
               </div>
               <div>Rückrufer: {item.rueckrufWer}</div>
               <div>Datum Rückruf:{item.datumRueckruf}</div>
@@ -48,7 +48,7 @@ const DatenAnrufe = () => {
                 ? <input disabled checked={false}  type='checkbox' /> 
                 : <input disabled checked  type='checkbox' />
                 }
-                {console.log(item.erledigt)}
+                {/* {console.log(item.erledigt)} */}
               </div>
             </div>
           </div>

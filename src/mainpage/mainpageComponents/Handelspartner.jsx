@@ -24,7 +24,7 @@ const Handelspartner = () => {
 
   return (
   <div className='h-[168px] grid px-6 border border-white py-2 m-2 rounded-md relative'>
-    <span className='text-sm font-semibold font-serif mb-2'>Kunde auswählen:</span>
+    <span className='text-sm text-white font-semibold font-serif mb-2'>Kunde auswählen:</span>
       <div className='h-10 cursor-pointer relative' onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
         Kunden auswählen
         {showDropdown && (

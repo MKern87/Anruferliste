@@ -83,6 +83,7 @@ $datumRueckruf = $data->datumRueckruf;
 $aktuellerText = $data->aktuellerText;
 $erledigt = $data->erledigt;
 $mitarbeiterRR = $data->mitarbeiterRR;
+$dauer = $data->dauer;
 
 $database = new Database();
 $db = $database->connect();
@@ -106,12 +107,11 @@ if (!$stmt) {
     die(json_encode(array('message' => 'Fehler beim Vorbereiten des Statements')));
 }
 
-// Setze Standardwerte für nicht definierte Felder
-$dauer = 0; 
+// Setze Standardwerte für nicht definierte Felder 
 $geloescht = 0; 
 
 // Bind parameters und execute query
-$stmt->bind_param('iissisisiisi', $kunde, $mitarbeiter, $art, $eintragDatum, $dauer, $rueckruf, $aktuellerText, $erledigt, $kategorie, $datumRueckruf, $mitarbeiterRR, $geloescht);
+$stmt->bind_param('sssssssssssi', $kunde, $mitarbeiter, $art, $eintragDatum, $dauer, $rueckruf, $aktuellerText, $erledigt, $kategorie, $datumRueckruf, $mitarbeiterRR, $geloescht);
 
 if (!$stmt->execute()) {
     die(json_encode(array('message' => 'Fehler beim Einfügen der Daten: ' . $stmt->error)));

@@ -21,9 +21,9 @@ const EintragNeuKategorie = ({setKategorie}) => {
   }, [])
 
     return (
-      <div className='grid grid-cols-1 mt-2 border border-white px-8 my-4 rounded-md py-2'>
+      <div className='h-full flex flex-col items-center justify-center py-2 mt-2 border border-white rounded-md'>
         <p className='text-sm font-semibold font-serif mb-2'>Kategorie</p>
-        <select ref={kategorie} className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='kategorieNeu' onChange={() => setKategorie(kategorie.current.value)}>
+        <select ref={kategorie} className='w-1/2 text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='kategorieNeu' onChange={() => setKategorie(kategorie.current.value)}>
         <option>Kategorie auswählen...</option>
           {
             kategorieData?.length > 0 && kategorieData?.map((item, index) => (

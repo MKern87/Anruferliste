@@ -11,11 +11,9 @@ const EintragNeuDatumRR = ({setDatumRueckruf}) => {
   }, [setCurrentDate]);
   
   return (
-    <div>
-      <span className='grid grid-cols-1 h-16 border border-white px-8 my-2 rounded-md py-1'>
-        <p className='text-sm font-semibold font-serif'>Rückruf gewünscht am</p> 
+    <div className='h-full border border-white px-4 mt-2 rounded-md pt-2'>
+        <p className='text-sm font-semibold font-serif mb-4'>Rückruf am</p> 
         <input ref={datumRueckruf} id='datumNeuRR' defaultValue={currentDate} onChange={() => setDatumRueckruf(datumRueckruf.current.value)} type='date'/>
-      </span>
     </div>
   )
 }

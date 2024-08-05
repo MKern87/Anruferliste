@@ -13,7 +13,7 @@ const EintragNeuRückrufWer = ({setMarbeiterRR}) => {
   
          if (data && data.mitarbeiterData && data.mitarbeiterData.length > 0) {
            setMitarbeiterData(data.mitarbeiterData);
-           console.log(data)
+          //  console.log(data)
          }
 
 
@@ -29,9 +29,9 @@ const EintragNeuRückrufWer = ({setMarbeiterRR}) => {
 
 
   return (
-    <div className='grid grid-cols-1 mt-2 border border-white px-8 my-4 rounded-md py-2'>
+    <div className='h-full flex flex-col items-center justify-center py-2 mt-2 border border-white rounded-md'>
       <p className='text-sm font-semibold font-serif mb-2'>Rückruf gewünscht von</p>
-      <select ref={mArbeiterRR} className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer mt-3' id='mitarbeiterRRneu' onChange={() => setMarbeiterRR(mArbeiterRR.current.value)}>
+      <select ref={mArbeiterRR} className='w-1/2 text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer mt-3' id='mitarbeiterRRneu' onChange={() => setMarbeiterRR(mArbeiterRR.current.value)}>
           <option value=''>Mitarbeiter auswählen...</option>
             {
             mitarbeiterData?.length > 0 && mitarbeiterData?.map((item, index) => (

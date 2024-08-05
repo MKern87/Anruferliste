@@ -16,7 +16,7 @@ const Mainpage = () => {
   
   return (
     <div>
-      <div className='w-full grid grid-cols-7 bg-gradient-to-l from-cyan-500 to-blue-500'>
+      <div className='w-full grid grid-cols-7 bg-myBlack1'>
 
         {/* Handelspartner */}
         <div className='col-span-1'>
@@ -56,7 +56,7 @@ const Mainpage = () => {
       </div>
 
         {/* DatenAnrufe */}
-        <div className='w-full h-screen grid grid-cols-6 bg-cyan-500'>
+        <div className='w-full h-screen grid grid-cols-6 bg-myBlack1'>
           {<DatenAnrufe />}
         </div>
     </div>

@@ -22,7 +22,7 @@ const Mitarbeiter = () => {
 
   return (
     <div className='grid grid-cols-1 mt-2 border border-white px-8 my-4 rounded-md py-2'>
-      <p className='text-sm font-semibold font-serif mb-2'>Mitarbeiter</p>
+      <p className='text-sm text-white font-semibold font-serif mb-2'>Mitarbeiter</p>
       <select className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='mitarbeiter'>
       <option value=''>Alle</option>
       {

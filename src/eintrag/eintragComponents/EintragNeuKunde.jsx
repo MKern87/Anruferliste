@@ -22,9 +22,9 @@ const EintragNeuKunde = ({setKunde}) => {
 
 
   return (
-    <div className='grid grid-cols-1 mt-2 border border-white px-8 my-4 rounded-md py-2'>
+    <div className='h-full flex flex-col items-center justify-center py-2 mt-2 border border-white rounded-md'>
       <p className='text-sm font-semibold font-serif mb-2'>Von Kunde</p>
-      <select ref={kunde} className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='kundeNeu' onChange={() => setKunde(kunde.current.value)}>
+      <select ref={kunde} className='w-1/2 text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='kundeNeu' onChange={() => setKunde(kunde.current.value)}>
       <option>Kunden auswählen...</option>
       {
         handelspartnerData?.length > 0 && handelspartnerData?.map((item, index) => (

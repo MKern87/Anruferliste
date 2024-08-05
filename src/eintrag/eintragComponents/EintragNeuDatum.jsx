@@ -11,11 +11,9 @@ const EintragNeuDatum = ({setEintragDatum}) => {
   }, [setCurrentDate]);
   
   return (
-    <div>
-      <span className='grid grid-cols-1 h-16 border border-white px-8 my-2 rounded-md py-1'>
-        <p className='text-sm font-semibold font-serif'>Eingegangen am</p> 
+    <div className='h-full border border-white px-4 mt-2 rounded-md pt-2'>
+        <p className='text-sm font-semibold font-serif mb-4'>Eingegangen am</p> 
         <input ref={eintragDatum} id='datumNeu' defaultValue={currentDate} onChange={() => setEintragDatum(eintragDatum.current.value)} type='date'/>
-      </span>
     </div>
   )
 }
