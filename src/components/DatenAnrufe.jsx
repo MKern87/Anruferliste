@@ -1,53 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import { DatenabrufAnrufe } from '../mainpage/mainpageComponents/functionhandler'
 
-const DatenAnrufe = () => {
+const DatenAnrufe = ({ D }) => {
 
-  // const [anrufeData, setAnrufeData] = useState([])
+  console.log(D)
 
-  // const anrufDaten = async () => {
+  const [anrufeData, setAnrufeData] = useState([])
 
-  //   const data = await DatenabrufAnrufe()
 
-  //   if(data.anrufeData) {
-  //     setAnrufeData(data.anrufeData)
-  //   }
-  //   console.log(data)
-  // }
+  const anrufDaten = async () => {
 
-  // useEffect(() => {
-  //   anrufDaten()
-  // },[])
-
-  const daten = [
-  {
-    handelspartner_id: 'kunde',
-    text: 'testtest',
-    art_id: 'telefon',
-    mitarbeiter_id: 'Fernando',
-    kategorie_id: 'Testttt',
-    datum: '08.08.2024',
-    dauer: '00:00:45'
-  },
-  {
-    handelspartner_id: 'kunde2',
-    text: 'testtexttest',
-    art_id: 'whats app',
-    mitarbeiter_id: 'Bernd',
-    kategorie_id: '1234',
-    datum: '09.08.2024',
-    dauer: '00:00:30'
+    const data = await DatenabrufAnrufe()
+    if(data.anrufeData) {
+      setAnrufeData(data.anrufeData)
+    }
   }
-  ]
 
-  // const filteredData = daten.filter(item => {
-  //   return new Date(item.datum).toLocaleDateString() === new Date(currentDate).toLocaleDateString()
-  // })
+  useEffect(() => {
+    anrufDaten()
+  },[])
 
   return (
       <div className='cursor-pointer bg-gray-700 max-h-fit' >
     {
-      // anrufeData?.length > 0 && anrufeData?.map((item, index) => (
-          daten.length > 0 && daten.map((item, index) =>(
+      anrufeData?.length > 0 && anrufeData?.filter((e) => e.datum == (D == undefined ? '' : (D.split('.')[0] > 9 ? D.split('.')[0] : '0' + D.split('.')[0]) + '.' + (D.split('.')[1] > 9 ? D.split('.')[1] : '0' + D.split('.')[1]) + '.' + (D.split('.')[2]))).map((item, index) =>(
           <div key={index} className='grid col-span-1 border border-black bg-gray-300 rounded-md m-1 py-2'>
             <div className=' justify-items-start pl-1'>
               <div>Kunde: {item.handelspartner_id}</div>
@@ -63,7 +39,6 @@ const DatenAnrufe = () => {
                   ? <input disabled checked={false} type='checkbox'/> 
                   : <input disabled checked type='checkbox' />
                 }
-              {/* {console.log(item.rueckruf)} */}
               </div>
               <div>Rückrufer: {item.rueckrufWer}</div>
               <div>Datum Rückruf:{item.datumRueckruf}</div>
@@ -73,12 +48,11 @@ const DatenAnrufe = () => {
                 ? <input disabled checked={false}  type='checkbox' /> 
                 : <input disabled checked  type='checkbox' />
                 }
-                {/* {console.log(item.erledigt)} */}
               </div>
             </div>
           </div>
         ))
-      }
+    }
     </div>
   )
 }

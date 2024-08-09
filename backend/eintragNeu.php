@@ -17,8 +17,8 @@ $eintragDatum = $data->eintragDatum;
 $kunde = $data->kunde;
 $kategorie = $data->kategorie;
 $rueckruf = $data->rueckruf;
-$datumRueckruf = $data->datumRueckruf;
-$aktuellerText = $data->aktuellerText;
+$datumRueckruf = $data->rueckrufDatum;
+$aktuellerText = $data->text;
 $erledigt = $data->erledigt;
 $mitarbeiterRR = $data->mitarbeiterRR;
 $dauer = $data->dauer;
@@ -49,7 +49,7 @@ if (!$stmt) {
 $geloescht = 0; 
 
 // Bind parameters und execute query
-$stmt->bind_param('sssssssssssi', $kunde, $mitarbeiter, $art, $eintragDatum, $dauer, $rueckruf, $aktuellerText, $erledigt, $kategorie, $datumRueckruf, $mitarbeiterRR, $geloescht);
+$stmt->bind_param('iiissisiisii', $kunde, $mitarbeiter, $art, $eintragDatum, $dauer, $rueckruf, $aktuellerText, $erledigt, $kategorie, $datumRueckruf, $mitarbeiterRR, $geloescht);
 
 if (!$stmt->execute()) {
     die(json_encode(array('message' => 'Fehler beim Einfügen der Daten: ' . $stmt->error)));

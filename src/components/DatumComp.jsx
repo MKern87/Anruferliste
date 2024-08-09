@@ -21,11 +21,18 @@ const DatumComp = () => {
           const date = new Date(currentDate);
           date.setDate(date.getDate() + index);
           return (
+          <div className='flex flex-col items-start justify-start gap-y-2'>
             <div key={index} className='p-2'>
               {date.toLocaleDateString()}
             </div>
+            <div className='justify-items-center'>
+              <DatenAnrufe D={date.toLocaleDateString()} />
+            </div>
+          </div>
           );
-        })}
+        })
+        }
+        
       </div>
       <button className='float-right w-20 px-2 border-l' onClick={handleNextDate}>Vor</button>
     </div>

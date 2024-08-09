@@ -28,7 +28,7 @@ const EintragNeuKunde = ({setKunde}) => {
       <option>Kunden auswählen...</option>
       {
         handelspartnerData?.length > 0 && handelspartnerData?.map((item, index) => (
-          <option key={index} value={item.suchbegriff}>
+          <option key={index} value={item.id}>
             {item.suchbegriff}
           </option>
         ))

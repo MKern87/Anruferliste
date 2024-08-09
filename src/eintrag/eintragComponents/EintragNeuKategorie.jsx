@@ -27,7 +27,7 @@ const EintragNeuKategorie = ({setKategorie}) => {
         <option>Kategorie auswählen...</option>
           {
             kategorieData?.length > 0 && kategorieData?.map((item, index) => (
-              <option key={index} value={item.kategorie}>
+              <option key={index} value={item.art_id}>
               {item.kategorie}
             </option>
             ))

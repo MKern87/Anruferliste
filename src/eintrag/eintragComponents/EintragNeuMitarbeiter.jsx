@@ -33,7 +33,7 @@ const EintragNeuMitarbeiter = ({setMitarbeiter}) => {
       <option>Mitarbeiter auswählen...</option>
       {
         mitarbeiterData?.length > 0 && mitarbeiterData?.map((item, index) => (
-          <option key={index} value={item.mitarbeiter}>
+          <option key={index} value={item.mitarbeiter_id}>
             {item.mitarbeiter}
           </option>
         ))

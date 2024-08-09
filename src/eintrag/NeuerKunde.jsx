@@ -25,21 +25,21 @@ const NeuerKunde = () => {
   const navigate = useNavigate()
 
   const createData = async () => {
-
+    console.log('OK')
     try {
       const request = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          suchbegriff,
-          name1,
-          name2,
-          strasse,
-          plz,
-          ort,
-          telefon,
-          eMail,
-          memo
+          'suchbegriff': suchbegriff,
+          'name1': name1,
+          'name2': name2,
+          'strasse': strasse,
+          'plz': plz,
+          'ort': ort,
+          'telefon': telefon,
+          'eMail': eMail,
+          'memo': memo
         })
       }
 

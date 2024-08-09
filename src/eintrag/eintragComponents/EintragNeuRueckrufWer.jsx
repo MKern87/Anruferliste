@@ -13,7 +13,6 @@ const EintragNeuRückrufWer = ({setMarbeiterRR}) => {
   
          if (data && data.mitarbeiterData && data.mitarbeiterData.length > 0) {
            setMitarbeiterData(data.mitarbeiterData);
-          //  console.log(data)
          }
 
 
@@ -35,7 +34,7 @@ const EintragNeuRückrufWer = ({setMarbeiterRR}) => {
           <option value=''>Mitarbeiter auswählen...</option>
             {
             mitarbeiterData?.length > 0 && mitarbeiterData?.map((item, index) => (
-              <option key={index} value={item.mitarbeiter}>
+              <option key={index} value={item.mitarbeiter_id}>
                 {item.mitarbeiter}
               </option>
             ))

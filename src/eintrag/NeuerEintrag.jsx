@@ -31,23 +31,28 @@ const NeuerEintrag = () => {
 
 
   const createData = async () => {
-    console.log([mitarbeiter, art, eintragDatum, kunde, kategorie, rueckruf, datumRueckruf, aktuellerText, erledigt, mitarbeiterRR, dauer])
+
+    const datumCheck1 = datumRueckruf == '' ? new Date().toISOString().split('T')[0] : datumRueckruf
+    const datumCheck2 = eintragDatum == '' ? new Date().toISOString().split('T')[0] : eintragDatum
+
+    console.log([mitarbeiter, art, datumCheck2, kunde, kategorie, rueckruf, datumCheck1, aktuellerText, erledigt, mitarbeiterRR, dauer])
+
     try {
       const request = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-              mitarbeiter, 
-              art, 
-              eintragDatum, 
-              kunde, 
-              kategorie, 
-              rueckruf, 
-              datumRueckruf, 
-              aktuellerText, 
-              erledigt, 
-              mitarbeiterRR,
-              dauer
+              'mitarbeiter': mitarbeiter, 
+              'art': art, 
+              'eintragDatum': datumCheck2, 
+              'kunde': kunde, 
+              'kategorie': kategorie, 
+              'rueckruf': rueckruf, 
+              'rueckrufDatum': datumCheck1, 
+              'text': aktuellerText, 
+              'erledigt': erledigt, 
+              'mitarbeiterRR': mitarbeiterRR,
+              'dauer': dauer
             })
         
       };

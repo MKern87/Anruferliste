@@ -8,7 +8,7 @@ const EintragNeuErledigt = ({setErledigt}) => {
     <div className='flex items-center justify-center border border-white rounded-md py-1'>
       <span className='text-sm font-semibold font-serif'>bereits Erledigt &nbsp;</span>
       <label>
-        <input ref={erledigt} type='checkbox' id='erledigtNeu' name='erledigtNeu' onChange={() => setErledigt(erledigt.current.value)}/>
+        <input ref={erledigt} type='checkbox' id='erledigtNeu' name='erledigtNeu' onChange={() => setErledigt(erledigt.current.checked)}/>
       </label>
     </div>
   )

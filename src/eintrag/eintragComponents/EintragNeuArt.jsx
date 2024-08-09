@@ -28,7 +28,7 @@ const EintragNeuArt = ({setArt}) => {
       <option>Art auswählen...</option>
         {
           artData?.length > 0 && artData?.map((item, index) => (
-            <option key={index} value={item.art}>
+            <option key={index} value={item.art_id}>
             {item.art}
           </option>
           ))

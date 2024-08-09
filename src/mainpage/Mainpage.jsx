@@ -51,10 +51,6 @@ const Mainpage = () => {
       </div>
       <div>
         <DatumComp />
-        {/* DatenAnrufe */}
-        <div className='w-full h-screen grid grid-cols-6 bg-myBlack1'>
-          <DatenAnrufe />
-        </div>
       </div>
 
     </div>

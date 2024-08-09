@@ -10,7 +10,7 @@ const Mitarbeiter = () => {
   const mitarbeiterDaten = async () => {
 
     const data = await DatenabrufMitarbeiter()
-
+    console.log(data)
        if (data.mitarbeiterData) {
          setMitarbeiterData(data.mitarbeiterData);
        }
@@ -27,7 +27,7 @@ const Mitarbeiter = () => {
       <option value=''>Alle</option>
       {
         mitarbeiterData?.length > 0 && mitarbeiterData?.map((item, index) => (
-          <option key={index} value={item.mitarbeiter}>
+          <option key={index} value={item.mitarbeiter_id}>
             {item.mitarbeiter}
           </option>
         ))
