@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Suche from './mainpageComponents/Suche'
 import KundenKategorieFilter from './mainpageComponents/KundenKategorieFilter'
 import Mitarbeiter from './mainpageComponents/Mitarbeiter'
@@ -12,53 +12,51 @@ import DatumComp from '../components/DatumComp'
 
 const Mainpage = () => {
   
-  
-  
   return (
     <div>
       <div className='w-full grid grid-cols-7 bg-myBlack1'>
 
         {/* Handelspartner */}
         <div className='col-span-1'>
-          {<Handelspartner />}
+          <Handelspartner />
         </div>
 
         {/* Suche // Kunden/Kategorie Filter */}
         <div className='col-start-2 col-span-2'>
-          {<Suche />}
-          {<KundenKategorieFilter />}
+          <Suche />
+          <KundenKategorieFilter />
         </div>
 
         {/* Stammdaten */}
         <div className='col-span-1'>
-          {<Mitarbeiter />}
-          {<Art />}
+          <Mitarbeiter />
+          <Art />
         </div>
 
         {/* Datum */}
         <div className='col-span-1'>
-          {<Datum />}
+          <Datum />
         </div>
 
         {/* Rückruf */}
         <div>
-          {<Rueckruf />}
+          <Rueckruf />
         </div>
 
         {/* Erledigt */}
         <div>
-          {<Erledigt />}
+          <Erledigt />
         </div>
 
       </div>
       <div>
-        {<DatumComp />}
-      </div>
-
+        <DatumComp />
         {/* DatenAnrufe */}
         <div className='w-full h-screen grid grid-cols-6 bg-myBlack1'>
-          {<DatenAnrufe />}
+          <DatenAnrufe />
         </div>
+      </div>
+
     </div>
   )
 }

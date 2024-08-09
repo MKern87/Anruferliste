@@ -28,7 +28,7 @@ const Rueckruf = () => {
 
   return (
     <div className='h-[168px] grid grid-row-2 px-6 border border-white py-2 m-2 rounded-md'>
-      <span className='text-sm text-white font-semibold font-serif mb-2'>Rückruf</span>
+      <span className='text-sm text-white font-semibold font-serif mb-2 flex flex-col items-center'>Rückruf</span>
         <div className="flex items-center justify-center text-white">
           <label className=''>
             <input type='radio' id='rueckruf1' value='ja' name='rueckruf'/>

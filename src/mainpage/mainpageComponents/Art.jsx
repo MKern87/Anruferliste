@@ -22,7 +22,7 @@ const Art = () => {
 
   return (
     <div className='grid grid-cols-1 border border-white my-6 px-8 rounded-md py-2'>
-      <p className='text-sm text-white font-semibold font-serif mb-3'>Art</p>
+      <p className='text-sm text-white font-semibold font-serif mb-3 flex flex-col items-center'>Art</p>
       <select className='w-full text-left text-sm border border-solid relative border-black rounded-sm bg-slate-100 cursor-pointer' id='art'>
       <option value=''>Alle</option>
         {

@@ -33,6 +33,7 @@ if ($abruf) { // Prüfen, ob der Abruf erfolgreich war
             $plz = $row['plz'];
             $ort = $row['ort'];
             $telefon = $row['telefon'];
+            $email = $row['eMail'];
             $memo = $row['memo'];
             
             array_push($arr, array(
@@ -44,6 +45,7 @@ if ($abruf) { // Prüfen, ob der Abruf erfolgreich war
                 'plz' => $plz,
                 'ort' => $ort,
                 'telefon' => $telefon,
+                'eMail' => $email,
                 'memo' => $memo
             ));
         }

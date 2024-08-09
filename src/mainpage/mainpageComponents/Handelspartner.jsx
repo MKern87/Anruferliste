@@ -1,7 +1,5 @@
-import { keyboard } from '@testing-library/user-event/dist/keyboard'
 import React, { useEffect, useState } from 'react'
 import { DatenabrufKunden } from './functionhandler'
-import NeuerEintrag from '../../eintrag/NeuerEintrag'
 
 const Handelspartner = () => {
 
@@ -24,7 +22,7 @@ const Handelspartner = () => {
 
   return (
   <div className='h-[168px] grid px-6 border border-white py-2 m-2 rounded-md relative'>
-    <span className='text-sm text-white font-semibold font-serif mb-2'>Kunde auswählen:</span>
+    <span className='text-sm text-white font-semibold font-serif mb-2 flex flex-col items-center'>Kunde auswählen:</span>
       <div className='h-10 cursor-pointer relative' onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)}>
         Kunden auswählen
         {showDropdown && (
@@ -34,8 +32,9 @@ const Handelspartner = () => {
                   <span>Suchbegriff: {item.suchbegriff}</span><br></br>
                   <span>Name1: {item.name1}</span><br></br>
                   <span>Name2: {item.name2}</span><br></br>
-                  <span>Adresse: {item.adresse}</span><br></br>
+                  <span>Adresse: {item.ort}</span><br></br>
                   <span>Telefon: {item.telefon}</span><br></br>
+                  <span>E-Mail: {item.eMail}</span><br></br>
                   <span>Memo: {item.memo}</span><br></br>
               </div>
             ))}
